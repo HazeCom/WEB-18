@@ -83,11 +83,15 @@
 
 <script>
   document.querySelector("#info").addEventListener("submit", myFunction);
+  var dataArr = JSON.parse(localStorage.getItem("investorsInfo")) || [];
   function myFunction() {
     event.preventDefault();
     var data = {};
-    var dataArr = [];
-    
-//     for (var i = 0; i<info)
+    var info = document.querySelector("#info");
+    for (var i = 0; i < info.length - 1; i++) {
+      data[info[i].id] = info[i].value;
+    }
+    dataArr.push(data);
+    localStorage.setItem("investorsInfo", JSON.stringify(dataArr));
   }
 </script>
