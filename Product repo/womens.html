@@ -478,6 +478,10 @@
     },
   ];
   var container = document.querySelector("#container");
+  var addToCart = JSON.parse(localStorage.getItem("cart")) || [];
+  var itemCount = localStorage.getItem("itCount") || 0;
+  var p = +localStorage.getItem("ttp") || 0;
+
   womensData.forEach(function (el) {
     var div = document.createElement("div");
     var img = document.createElement("img");
@@ -490,10 +494,34 @@
     strike.innerText = el.strikedoffprice;
     var add = document.createElement("button");
     add.innerText = "Add to Cart";
-    add.addEventListener("click", function (event) {
-      localStorage.setItem("addToCart", JSON.stringify());
+    add.addEventListener("click", function () {
+      addCart(el);
     });
     div.append(img, name, price, strike, add);
     container.append(div);
   });
+
+  function addCart(el) {
+    var addToCart = JSON.parse(localStorage.getItem("cart"));
+    for (var i = 0; i < addToCart.length; i++) {
+      if (
+        addToCart[i].name == el.name &&
+        addToCart[i].price == el.price &&
+        addToCart[i].image_url == el.image_url &&
+        addToCart[i].strikedoffprice == el.strikedoffprice
+     ) {
+        alert("Item already added");
+        break;
+      }
+    }
+
+
+    alert('Item has been added')
+    addToCart.push(el);
+    itemCount++;
+    p += +el.price;
+    localStorage.setItem("ttp", p);
+    localStorage.setItem("itCount", itemCount);
+    localStorage.setItem("cart", JSON.stringify(addToCart));
+  }
 </script>

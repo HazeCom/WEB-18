@@ -1,0 +1,95 @@
+*{
+      margin: 0%;
+}
+
+#nav{
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 40px;
+      background-color: blue;
+      margin-bottom: 50px;
+      padding: 1%;
+}
+
+#nav>div{
+      color: white;
+}
+
+#nav>div>a{
+      color: white;
+      text-decoration: none;
+}
+
+#cart{
+      display: grid;
+      margin: auto;
+      width: 95%;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+}
+
+#cart>div{
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+
+#cart>div>p{
+      font-size: 16px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      margin-right: 20px;
+}
+
+#cart>div :nth-child(2){
+      font-weight:bold;
+}
+
+#cart>div :nth-child(4){
+      color: gray;
+      text-decoration: line-through;
+}
+#cart>div>button{
+      margin-left: 20px;
+      margin-bottom: 20px;
+      color: white;
+      background-color: brown;
+      border: 0px;
+      padding: 5px 10px 5px 10px;
+      border-radius: 5px;
+}
+
+#cart>div>button:hover{
+      cursor: pointer;
+      background-color: orangered;
+}
+
+#pro{
+      text-align: center;
+      margin: auto;
+      height: 30px;
+      /* border: 1px solid red; */
+}
+
+label{
+      font-size: 20px;
+      
+}
+
+input{
+      text-align: center;
+      font-size: 18px;
+}
+
+#submit{
+      color: white;
+      background-color: orangered;
+      border: 0px;
+      border-radius: 5px;
+      padding: 5px 10px 5px 10px;
+      
+}
+
+#submit:hover{
+      cursor: pointer;
+      background-color: red;
+}
